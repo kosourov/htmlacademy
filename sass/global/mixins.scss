@@ -1,0 +1,39 @@
+@mixin font-control($fontSize, $lineHeight, $fontWeight) {
+  font-family: "PT Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+}
+
+@mixin container() {
+  width: 320px;
+  @media #{$tablet-width} {
+    width: 768px;
+  }
+  @media #{$desktop-width} {
+    width: 1200px;
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin absolute-pseudo-element($top: auto, $left: auto, $bottom: auto, $right: auto) {
+  content: "";
+  position: absolute;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
